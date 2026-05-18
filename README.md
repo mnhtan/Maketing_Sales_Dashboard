@@ -212,11 +212,11 @@ The Empathize stage identifies who the dashboard is for, what problems the stake
 
 #### Empathy Map
 
-![Empathy Map](image/Empathy%20MAP.png)
+![Empathy Map](image/Empathy_MAP.png)
 
 #### Stakeholder Journey
 
-![Stakeholder Journey](image/Stakeholder%20Journey.png)
+![Stakeholder Journey](image/Stakeholder_Journey.png)
 
 ### 2️⃣ Define Point of View
 
@@ -224,13 +224,13 @@ This stage defines the most important business metric and the main perspectives 
 
 #### Northstar Metric
 
-![Northstar Metric](image/Northstar%20M.png)
+![Northstar Metric](image/Northstar_M.png)
 
 The selected Northstar Metric is **Marketing ROI** because it directly connects marketing cost with revenue and helps evaluate whether marketing investment is creating business value.
 
 #### Define Point of View
 
-![Define Point of View](image/Define%20point%20of%20View.png)
+![Define Point of View](image/Define_point_of_view.png)
 
 The dashboard is designed around four key perspectives:
 
@@ -249,7 +249,7 @@ The Ideate stage brainstorms dashboard content and organizes dashboard pages by 
 
 #### Structure Idea
 
-![Structure Idea](image/Structure%20Idea.png)
+![Structure Idea](image/Structure_Idea.png)
 
 ### 4️⃣ Prototype and Review
 
@@ -263,7 +263,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 
 ### 📋 I. Overview Page
 
-![Overview Page](image/page%20overview.png)
+![Overview Page](image/page_overview.png)
 
 #### Key Findings
 
@@ -275,7 +275,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 
 ### 📌 II. Insight Page
 
-![Insight Page](image/page%20insight.png)
+![Insight Page](image/page_insight.png)
 
 #### Key Findings
 
@@ -287,7 +287,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 
 ### 📣 III. Campaign Analysis Page
 
-![Campaign Page](image/page%20campaign.png)
+![Campaign Page](image/page_campaign.png)
 
 #### Key Findings
 
@@ -299,7 +299,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 
 ### 🛍️ IV. Product Analysis Page
 
-![Product Page](image/page%20product.png)
+![Product Page](image/page_product.png)
 
 #### Key Findings
 
@@ -311,7 +311,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 
 ### 👥 V. Customer Analysis Page
 
-![Customer Page](image/page%20customer.png)
+![Customer Page](image/page_customer.png)
 
 #### Key Findings
 
