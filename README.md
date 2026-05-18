@@ -273,19 +273,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 - Time-based trends help identify whether performance growth is stable or driven by short-term spikes.
 - Comparing **ASD Revenue** and **Direct Revenue** helps separate marketing-driven impact from non-marketing sales contribution.
 
-### 📌 II. Insight Page
-
-![Insight Page](image/page_insight.png)
-
-#### Key Findings
-
-- The page summarizes the most important performance signals that require stakeholder attention.
-- It helps identify where marketing budget may be inefficient by comparing cost, revenue, and ROI outcomes.
-- The insight view supports faster decision-making by turning multiple dashboard metrics into action-oriented observations.
-- It highlights whether performance changes come from campaign efficiency, product contribution, funnel conversion, or revenue mix.
-- The page acts as a bridge between high-level monitoring and detailed analysis pages.
-
-### 📣 III. Campaign Analysis Page
+### 📣 II. Campaign Analysis Page
 
 ![Campaign Page](image/page_campaign.png)
 
@@ -297,7 +285,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 - Campaign-level trends reveal which campaigns are stable, improving, or weakening over time.
 - Campaign × SKU analysis helps show which products contribute most to each campaign's performance.
 
-### 🛍️ IV. Product Analysis Page
+### 🛍️ III. Product Analysis Page
 
 ![Product Page](image/page_product.png)
 
@@ -309,7 +297,7 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 - Comparing ASD-driven sales with direct sales helps determine which SKUs are marketing-driven versus naturally selling.
 - SKU × Campaign analysis supports better product selection for future campaign planning.
 
-### 👥 V. Customer Analysis Page
+### 👥 IV. Customer Analysis Page
 
 ![Customer Page](image/page_customer.png)
 
@@ -321,6 +309,17 @@ The Prototype and Review stages are reflected in the Power BI dashboard pages. T
 - Customer insights help the stakeholder connect marketing performance with actual buyer behavior.
 - The results can support future campaign targeting, customer segmentation, and retention strategy.
 
+### 📌 V. Insight Page
+
+![Insight Page](image/page_insight.png)
+
+#### Key Findings
+
+- The page summarizes the most important performance signals that require stakeholder attention.
+- It helps identify where marketing budget may be inefficient by comparing cost, revenue, and ROI outcomes.
+- The insight view supports faster decision-making by turning multiple dashboard metrics into action-oriented observations.
+- It highlights whether performance changes come from campaign efficiency, product contribution, funnel conversion, or revenue mix.
+- The page acts as a bridge between high-level monitoring and detailed analysis pages.
 ---
 
 ## 🔎 Final Conclusion & Recommendation
