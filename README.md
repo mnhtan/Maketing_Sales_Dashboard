@@ -87,7 +87,7 @@ The workbook contains raw business data, marketing cost data, SKU-level campaign
 | Worksheet | Role in Project | Records | Description |
 |---|---:|---:|---|
 | `order` | Fact table | 3,451 rows | Sales order transactions containing customer, product, price, quantity, cost, source, and order status information. |
-| `mkt_camp_cost` | Fact table | 854 rows | Campaign-level marketing spend and advertising performance, including spend, budget, impressions, clicks, CPM, and CPC. |
+| `mkt_camp_cost` | Dimension table | 854 rows | Campaign-level marketing campaign information and cost attributes, including campaign name, date, budget, spend, impressions, clicks, CPM, and CPC. |
 | `mkt_camp_by_sku_cost` | Fact table | 3,874 rows | SKU-level campaign cost allocation and engagement performance, connecting campaigns with products/SKUs. |
 | `danh sach san pham` | Dimension table | 2,250 rows | Product master list containing product codes, barcode, product name, category, brand, color, material, selling price, and cost fields. |
 | `Sample Description (MKT Camp by...)` | Reference sheet | 85 rows | Sample explanation / helper sheet for understanding the campaign-by-SKU calculation logic. |
@@ -97,7 +97,7 @@ The workbook contains raw business data, marketing cost data, SKU-level campaign
 
 ### 1️⃣ Tables Used in the Analytical Model
 
-The analytical model mainly uses **3 fact tables** and **1 product dimension table**. A custom **Dim Date** table was added during Power BI modeling.
+The analytical model mainly uses **2 fact tables** and **3 dimension tables**. A custom **Dim Date** table was added during Power BI modeling.
 
 #### Fact Tables
 
@@ -116,20 +116,7 @@ This table contains order-level and product-level sales transaction data. It is 
 </details>
 
 <details>
-<summary><strong>Table 2: Fact_Marketing_Campaign_Cost</strong></summary>
-
-This table contains campaign-level marketing spending and advertising performance. It is used to evaluate campaign cost, reach, clicks, and high-level campaign efficiency.
-
-| Column Group | Key Fields | Usage |
-|---|---|---|
-| Campaign information | `Tên chiến dịch`, `Ngày`, `Phân phối chiến dịch`, `Loại ngân sách chiến dịch` | Identify campaign, date, delivery status, and budget type. |
-| Cost measures | `Số tiền đã chi tiêu`, `Ngân sách chiến dịch` | Measure campaign spend and compare against budget. |
-| Advertising performance | `Lượt hiển thị`, `Click`, `CPM`, `CPC` | Analyze reach, traffic, and ad cost efficiency. |
-
-</details>
-
-<details>
-<summary><strong>Table 3: Fact_Marketing_SKU_Cost</strong></summary>
+<summary><strong>Table 2: Fact_Marketing_SKU_Cost</strong></summary>
 
 This table connects marketing campaigns to product/SKU-level performance. It is used to evaluate how marketing spend is distributed across products and whether each SKU generates sufficient return.
 
@@ -145,6 +132,19 @@ This table connects marketing campaigns to product/SKU-level performance. It is 
 </details>
 
 #### Dimension Tables
+
+<details>
+<summary><strong>Table 3: Dim_Marketing_Campaign_Cost</strong></summary>
+
+This table contains campaign-level marketing cost and advertising performance attributes. In the dashboard model, it is used as a **dimension table** to provide campaign context for analyzing campaign performance, budget usage, impressions, clicks, CPM, and CPC.
+
+| Column Group | Key Fields | Usage |
+|---|---|---|
+| Campaign information | `Tên chiến dịch`, `Ngày`, `Phân phối chiến dịch`, `Loại ngân sách chiến dịch` | Identify campaign, date, delivery status, and budget type. |
+| Cost attributes | `Số tiền đã chi tiêu`, `Ngân sách chiến dịch` | Provide campaign spend and budget context for performance analysis. |
+| Advertising attributes | `Lượt hiển thị`, `Click`, `CPM`, `CPC` | Support reach, traffic, and ad cost efficiency analysis. |
+
+</details>
 
 <details>
 <summary><strong>Table 4: Dim_Product</strong></summary>
@@ -180,9 +180,9 @@ The model connects sales, marketing cost, campaign, SKU, product, and date infor
 |---|---|---|---|
 | `Fact_Order` | `Dim_Product` | Product Code / SKU | Analyze revenue, quantity sold, and product performance by SKU. |
 | `Fact_Marketing_SKU_Cost` | `Dim_Product` | Product Code / SKU | Analyze marketing cost, ROAS, and ROI by product/SKU. |
-| `Fact_Marketing_Campaign_Cost` | `Fact_Marketing_SKU_Cost` | Campaign Name + Date | Compare campaign-level performance with SKU-level campaign allocation. |
+| `Dim_Marketing_Campaign_Cost` | `Fact_Marketing_SKU_Cost` | Campaign Name + Date | Provide campaign-level context for SKU-level campaign allocation and performance analysis. |
 | `Fact_Order` | `Dim_Date` | Order Date | Analyze revenue, orders, and sales trends over time. |
-| `Fact_Marketing_Campaign_Cost` | `Dim_Date` | Campaign Date | Analyze campaign spend, impressions, clicks, CPM, and CPC over time. |
+| `Dim_Marketing_Campaign_Cost` | `Dim_Date` | Campaign Date | Analyze campaign attributes, spend context, impressions, clicks, CPM, and CPC over time. |
 | `Fact_Marketing_SKU_Cost` | `Dim_Date` | Campaign Date | Analyze SKU-level marketing performance over time. |
 
 ### 3️⃣ Main Measure Groups
@@ -190,7 +190,7 @@ The model connects sales, marketing cost, campaign, SKU, product, and date infor
 | Measure Group | Example Metrics | Business Purpose |
 |---|---|---|
 | Revenue & Sales | Total Revenue, ASD Revenue, Direct Revenue, Total Orders, Units Sold | Understand business outcome and sales contribution. |
-| Marketing Cost | Total Marketing Cost, Campaign Cost, Product Marketing Cost | Track how much budget is spent and where it is allocated. |
+| Marketing Cost | Total Marketing Cost, Campaign Cost, Product Marketing Cost | Track marketing spend from campaign and SKU-level perspectives. |
 | Efficiency & Return | Marketing ROI, Campaign ROI, Product ROI, ROAS | Evaluate whether marketing spending is generating enough return. |
 | Funnel Performance | Impressions, Clicks, CTR, Conversions, Conversion Rate, Drop-off Rate | Identify where users drop off and why performance changes. |
 | Product Performance | Revenue by SKU, Units Sold by SKU, Product ROAS, SKU Cost | Identify high-performing and underperforming products. |
